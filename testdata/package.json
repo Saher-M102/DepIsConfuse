@@ -1,0 +1,11 @@
+{
+  "name": "test-project",
+  "dependencies": {
+    "express": "^4.18.0",
+    "lodash": "^4.17.21",
+    "this-package-definitely-does-not-exist-xyz-987654321": "^1.0.0"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0"
+  }
+}
