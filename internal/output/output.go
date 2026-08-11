@@ -65,7 +65,7 @@ func PrintResults(w io.Writer, results []DepIsConfuse.Result) Summary {
 	fmt.Fprintf(w, "%sScanned %d dependenc%s%s\n\n", colorBold, summary.Total, plural(summary.Total), colorReset)
 
 	if len(unclaimed) > 0 {
-		fmt.Fprintf(w, "%s⚠ UNCLAIMED — potential dependency confusion risk:%s\n", colorRed+colorBold, colorReset)
+		fmt.Fprintf(w, "%s UNCLAIMED — potential dependency confusion risk:%s\n", colorRed+colorBold, colorReset)
 		for _, r := range unclaimed {
 			fmt.Fprintf(w, "  %s✗%s %s (%s) — not found on public registry, an attacker could claim this name\n",
 				colorRed, colorReset, r.Dependency.Name, r.Dependency.Registry)
@@ -74,7 +74,7 @@ func PrintResults(w io.Writer, results []DepIsConfuse.Result) Summary {
 	}
 
 	if len(errored) > 0 {
-		fmt.Fprintf(w, "%s⚠ ERRORS — could not verify these:%s\n", colorYellow+colorBold, colorReset)
+		fmt.Fprintf(w, "%s ERRORS — could not verify these:%s\n", colorYellow+colorBold, colorReset)
 		for _, r := range errored {
 			fmt.Fprintf(w, "  %s?%s %s (%s) — %v\n",
 				colorYellow, colorReset, r.Dependency.Name, r.Dependency.Registry, r.Err)

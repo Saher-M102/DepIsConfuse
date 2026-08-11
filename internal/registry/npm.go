@@ -77,7 +77,7 @@ func CheckNPMScope(client *http.Client, scope string) (registered bool, err erro
 	req.Header.Set("User-Agent", "Mozilla/5.0 (compatible; DepIsConfuse dependency-confusion-scanner)")
 	req.Header.Set("Accept-Language", "en-US")
 
-	
+	// // a real browser these headers are the minimum needed to pass.
 	noRedirectClient := &http.Client{
 		Timeout: client.Timeout,
 		CheckRedirect: func(req *http.Request, via []*http.Request) error {
