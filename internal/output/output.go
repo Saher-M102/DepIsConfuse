@@ -67,7 +67,7 @@ func PrintResults(w io.Writer, results []DepIsConfuse.Result) Summary {
 	if len(unclaimed) > 0 {
 		fmt.Fprintf(w, "%s Unclaimed dependencies:%s\n", colorRed+colorBold, colorReset)
 		for _, r := range unclaimed {
-			fmt.Fprintf(w, "  %s✗%s %s (%s) — not found on public registry, an attacker could claim this name\n",
+			fmt.Fprintf(w, "  %s%s %s (%s) — not found on public registry, an attacker could claim this name\n",
 				colorRed, colorReset, r.Dependency.Name, r.Dependency.Registry)
 		}
 		fmt.Fprintln(w)
